@@ -1,0 +1,4 @@
+Flask
+FLask-SQLAlchemy
+Flask-Cors
+Werkzerug
