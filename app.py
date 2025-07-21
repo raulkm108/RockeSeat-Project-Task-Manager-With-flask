@@ -27,7 +27,6 @@ def get_tasks():
 
 @app.route('/tasks/<int:id>', methods=['GET'])
 def get_task(id):
-    task = None
     for t in tasks:
         if t.id == id:
             return jsonify(t.to_dict())
