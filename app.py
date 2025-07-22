@@ -51,8 +51,19 @@ def update_task(id):
     print(task)
     return jsonify({"message": "Task sucessfully updated"})
 
-@app.route('/tasks/<int:id', methods=['DELETE'])
-    def delete_task(id):
+@app.route('/tasks/<int:id>', methods=['DELETE'])
+def delete_task(id):
+    task = None
+    for t in tasks:
+        if t.id == id:
+            task = t
+
+    if not task:
+        return jsonify({"message": "Task could not be found"}), 404
+    
+    tasks.remove(task)
+    return jsonify({"message": "Task sucessfully removed"})
+    
     
  
 
