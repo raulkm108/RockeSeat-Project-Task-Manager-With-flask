@@ -44,7 +44,10 @@ def update_task(id):
     if task == None:
         return jsonify({"message": "Task could not be found"}), 404
 
-    
+    data = request.get_json()
+    task.title = data['title']
+    task.description = data['description']
+    task.completed = data['completed']
 
 
  
