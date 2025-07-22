@@ -40,7 +40,7 @@ def update_task(id):
     for t in tasks:
         if t.id == id:
             task = t
-
+    print(task)
     if task == None:
         return jsonify({"message": "Task could not be found"}), 404
 
@@ -48,6 +48,7 @@ def update_task(id):
     task.title = data['title']
     task.description = data['description']
     task.completed = data['completed']
+    print(task)
     return jsonify({"message": "Task sucessfully updated"})
 
 
