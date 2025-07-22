@@ -48,6 +48,7 @@ def update_task(id):
     task.title = data['title']
     task.description = data['description']
     task.completed = data['completed']
+    return jsonify({"message": "Task sucessfully updated"})
 
 
  
