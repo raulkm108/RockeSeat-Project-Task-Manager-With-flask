@@ -14,3 +14,4 @@ def test_create_task():
     response_json = response.json()
     assert "message" in response_json
     assert "id" in response_json
+    tasks.append(response_json['id'])
